@@ -14,10 +14,8 @@ class python_question_controller extends Controller
     {
 
         $question = $request->input('editordata');
-
         DB::table('python_question')->insert([
             'question'=>$question
-
         ]);
         return back();
 
@@ -29,6 +27,13 @@ class python_question_controller extends Controller
     }
     public function viewQuestionOn(){
         $question = DB::table('python_question')->get()->last();
-        return view('welcome',compact('question'));
+        return view('questions/python',compact('question'));
     }
+//    public function insertAnswer(Request $request){
+//        $question = $request->input('editordata');
+//        DB::table('python_question')->insert([
+//            'question'=>$question
+//        ]);
+//        return back();
+//    }
 }

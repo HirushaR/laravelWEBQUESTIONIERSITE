@@ -14,6 +14,8 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+    <script src="assets/js/Panel-Element-1.js"></script>
+    <script src="assets/js/Panel-Element.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -27,6 +29,14 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/TextEditor.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+    <link rel="stylesheet" href="assets/css/Panel-Element-1.css">
+    <link rel="stylesheet" href="assets/css/Panel-Element-2.css">
+    <link rel="stylesheet" href="assets/css/Panel-Element-3.css">
+    <link rel="stylesheet" href="assets/css/Panel-Element.css">
+    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
+
 </head>
 <body style="background-size: auto;background-position: 100%10%;background-repeat: no-repeat;background-image: url(&quot;assets/img/test4.png&quot;);">
     <div id="app">

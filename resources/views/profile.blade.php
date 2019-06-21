@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/Profile-Card-1.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Team-Boxed.css">
-</head>
-
-<body>
-@include('layouts.nav')
+@extends('layouts.app')
+@section('content')
     <div></div>
     <div class="team-boxed">
         <div class="container">
@@ -23,13 +7,13 @@
             <div class="row people" style="margin-left: 100px;margin-right: 0px;">
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box" style="height: 0px;width: 278.325px;margin-left: 100px;background-color: rgba(255,255,255,0.05);"><img class="rounded-circle" src="assets/img/1.jpg" style="margin-top: 10px;">
-                        <h3 class="name">Full Name</h3>
+                        <h3 class="name">{{Auth::user()->name}}</h3>
                         <p class="title">web designer</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item">
                     <div class="box" style="height: 358px;width: 500px;margin-left: 100px;">
-                        <h3 class="name">Name</h3>
+                        <h3 class="name"></h3>
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
                         <div class="social"
                             style="margin-bottom: 0px;margin-top: 120px;"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
@@ -70,8 +54,4 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+@endsection
