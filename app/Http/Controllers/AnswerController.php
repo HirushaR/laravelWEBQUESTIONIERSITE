@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\question;
 use DB;
-use stdClass;
+use App\Answer;
 use Illuminate\Http\Request;
 
 use DateTime;
@@ -26,7 +25,10 @@ class AnswerController extends Controller
             'answer'=>$answer,
         ]);
         return back();
-
+    }
+    public function getAllAnswers(){
+        $data = DB::table('answer')->get()->all();
+        return view('questions/Answers' , compact('data'));
     }
 
 

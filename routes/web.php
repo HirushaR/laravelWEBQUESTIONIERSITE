@@ -36,6 +36,7 @@ Route::post('insert','QuestionController@insert')->name('insert');
 route::get('admin','QuestionController@viewQuestionONAdmin');
 route::get('programing/{lang}','QuestionController@viewQuestionOn')->name('programing');
 Route::post('insertAnswer','QuestionController@insertAdminAnswer')->name('insertAnswer');
-Route::post('Answer','QnswerController@insert');
+Route::post('Answer','QuestionController@insert');
+Route::get('/allAnswers','AnswerController@getAllAnswers');
 
 

@@ -44,7 +44,7 @@
     <section>
     <section class="shadow-none row m-3" id="container" style="filter: blur(0px);">
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
-            <a class="links" href="javascript:openInfoPanel()">
+            <a class="links" href="{{url('allAnswers')}}">
                 <div class="card device-card">
                     <div class="card-device-status bg-success"></div>
                     <div class="card-body" style="margin-left: 80px;">
@@ -63,6 +63,7 @@
             <div class="d-inline-block float-right mr-2 mt-1"><a class="close d-inline-block mr-2 mt-4" href="javascript:closeInfoPanel()" data-dismiss=".infopanel" aria-label="close"><span aria-hidden="true">x</span></a></div>
             <div class="clear p-2 ml-1 mb-2 bold"><span><br>Infopanel Title<br><br></span></div>
             <div class="clear p-2  "><span><br>{!!$data->question!!}<br><br></span></div>
+
 
         </div>
     </section>
