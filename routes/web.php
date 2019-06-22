@@ -1,4 +1,7 @@
 <?php
+use App\User;
+use App\question;
+use App\answer;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +28,14 @@ Route::get('/admin', function () {
     Route::get('/profile', function () {
         return view('profile');
     })->name('profile');
-    Route::get('/python', function () {
-        return view('questions/python');
-    })->name('python');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::post('insert','python_question_controller@insert');
-route::get('admin','python_question_controller@viewQuestionONAdmin');
-route::get('python','python_question_controller@viewQuestionOn');
+    Route::get('/language', function () {
+        return view('questions/language');
+    })->name('language');
+Route::get('home', 'HomeController@index')->name('home');
+Route::post('insert','QuestionController@insert')->name('insert');
+route::get('admin','QuestionController@viewQuestionONAdmin');
+route::get('programing/{lang}','QuestionController@viewQuestionOn')->name('programing');
+Route::post('insertAnswer','QuestionController@insertAdminAnswer')->name('insertAnswer');
+Route::post('Answer','QnswerController@insert');
+
 

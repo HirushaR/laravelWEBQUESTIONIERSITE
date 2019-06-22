@@ -21,8 +21,10 @@
     </nav>
 <div class="container" style="margin:40px">
     <p></p>
-    <form>
-        <div class="form-group"><textarea class="form-control" id="summernote" name="editordata"></textarea></div>
+    <form method="post" action="{{route('insert')}}">
+        @csrf
+        <div class="form-group"><textarea class="form-control" id="summernote" name="editordata">add a question</textarea></div>
+        <div class="form-group"><textarea class="form-control" id="summernote" name="editordata2">add a answer</textarea></div>
         <div class="form-group"><button class="btn btn-primary" type="submit" style="background-color: rgb(15,103,122);">Submit</button></div>
     </form>
 </div>
@@ -35,46 +37,21 @@
         <div class="intro"></div>
     </div>
 </div>
-<section>
-    <section id="amihub-elemnt-menubar">
-        <div class="top-menu-wrapper shadow">
-            <div class="row pt-1 pb-1 pl-3 pr-3 align-items-center top-menu-wrapper" style="background-color: rgba(255,255,255,0);">
-                <div class="col col-lg-2 col-sm-12 col-space"><button class="btn btn-primary shadow-none btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#addSensorModal" style="margin-left: 80px;"><i class="fa fa-plus mr-2"></i>&nbsp;Add Quection</button></div>
-                <div
-                    class="col col-lg-10 col-sm-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend"></div>
-                        <div class="input-group-append"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="addSensorModal" aria-labelledby="addSensorModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header"><i class="fa fa-plus icon-dashboard"></i>
-                        <h4 class="modal-title">Add Quection</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group"><label>details:</label><input class="form-control" type="text" id="fieldNameDashboard" placeholder="Quection"></div>
-                        </form>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-light" id="btnModelCloseAddDashboard" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary btn btn-outline-info btn-block" type="button">Add</button></div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+@if($data == null)
+    there are no question
+    @else
+    <section>
     <section class="shadow-none row m-3" id="container" style="filter: blur(0px);">
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
             <a class="links" href="javascript:openInfoPanel()">
                 <div class="card device-card">
                     <div class="card-device-status bg-success"></div>
                     <div class="card-body" style="margin-left: 80px;">
-                        <h5 class="card-title">Quection name 01</h5>
+                        <h5 class="card-title">Quection number {!! $data->id !!}</h5>
                         <p class="card-text"> {!!$data->question!!}</p>
-                        <div class="line-ellipse light"><span>Data:</span></div>
-                        <div class="line-ellipse light"><span>Local:</span></div>
-                        <p class="card-text-small">Last activity: 23m ago<br></p>
+                        <div class="line-ellipse light"><span>{!!$data->answer!!}</span></div>
+                        <p class="card-text-small">Created: {!! $data->created_at !!}<br></p>
                         <p class="card-text-small">card-catagary<br></p>
                     </div>
                 </div>
@@ -86,8 +63,9 @@
             <div class="d-inline-block float-right mr-2 mt-1"><a class="close d-inline-block mr-2 mt-4" href="javascript:closeInfoPanel()" data-dismiss=".infopanel" aria-label="close"><span aria-hidden="true">x</span></a></div>
             <div class="clear p-2 ml-1 mb-2 bold"><span><br>Infopanel Title<br><br></span></div>
             <div class="clear p-2  "><span><br>{!!$data->question!!}<br><br></span></div>
+
         </div>
     </section>
 </section>
-
+@endif
 @endsection
